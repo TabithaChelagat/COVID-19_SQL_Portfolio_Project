@@ -101,10 +101,10 @@ The provided data offers insights into the COVID-19 impact on various countries,
 *Key observations*:
 
 
--Countries like Andorra, Montenegro, and Czechia have experienced relatively high infection rates, with percentages of the population infected surpassing 15%.
+- Countries like Andorra, Montenegro, and Czechia have experienced relatively high infection rates, with percentages of the population infected surpassing 15%.
 Larger nations such as the United States, Brazil, and India, while having high absolute infection counts, exhibit lower percentages of the population infected, likely due to their large population sizes.
 
--Larger populations, such as India, Indonesia, and Pakistan, have substantial absolute numbers of cases despite lower infection rates per capita.
+- Larger populations, such as India, Indonesia, and Pakistan, have substantial absolute numbers of cases despite lower infection rates per capita.
 
 This summary underscores the diverse impact of COVID-19 on different countries, influenced by factors such as population density, healthcare infrastructure, and public health measures implemented.
 
@@ -143,16 +143,16 @@ China's infection rate has remained relatively low compared to other countries, 
 ![Screenshot (205)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/a7aa742d-6100-4798-970f-871ce6347c1a)
 
 
-**Global Numbers**: 
+- **Global Numbers**: 
 As of March 2021, there was a total of 150,574,977 confirmed cases of COVID-19 reported worldwide, and 3,180,206 deaths. This means that 2.11% of the world's population had been infected with the virus.
 
-**Percent Of Population Infected Per Country**: 
+- **Percent Of Population Infected Per Country**: 
 The map on the right-hand side of the dashboard shows the percentage of people infected with COVID-19 in each country. The countries are color-coded according to the percentage of their population that has been infected, with darker colors indicating a higher percentage of infection.
 
-**Total Death Count Per Continent**: 
+- **Total Death Count Per Continent**: 
 The bar chart on the left-hand side of the dashboard shows the total number of deaths from COVID-19 in each continent. The continents are listed from lowest to highest death toll.
 
-**Percent Population Infected Per Month**:
+- **Percent Population Infected Per Month**:
 The line graph at the bottom of the dashboard shows the percentage of the population infected with COVID-19 over time. The graph shows data for five countries: the United States, the United Kingdom, Mexico, China, and India, and their infection estimates for the next 6 months.
 
 
@@ -163,5 +163,9 @@ It is important to note that the data on this dashboard is based on reported cas
 **CONCLUSION**
 
 
-In conclusion, the provided data offers valuable insights into the global impact of the COVID-19 pandemic, highlighting significant variations in infection rates and mortality across countries and continents. Analysis of the data reveals that certain regions, such as Europe and North America, have borne the brunt of the pandemic, reporting high infection and death counts. Conversely, countries like China have managed to maintain relatively lower infection rates through stringent containment measures. Despite varying levels of success in controlling the virus, the data underscores the need for continued vigilance, international cooperation, and robust public health measures to mitigate the spread of COVID-19 and minimize its adverse effects on global health and economies.
+In conclusion, the provided data offers valuable insights into the global impact of the COVID-19 pandemic, highlighting significant variations in infection rates and mortality across countries and continents. 
+
+Analysis of the data reveals that certain regions, such as Europe and North America, have borne the brunt of the pandemic, reporting high infection and death counts. Conversely, countries like China have managed to maintain relatively lower infection rates through stringent containment measures.
+
+Despite varying levels of success in controlling the virus, the data underscores the need for continued vigilance, international cooperation, and robust public health measures to mitigate the spread of COVID-19 and minimize its adverse effects on global health and economies.
 
