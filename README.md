@@ -9,7 +9,7 @@ This project focuses on analyzing COVID-19 data spanning from March 2020 to Sept
 
 1. What is the global death percentage?
 2. What is the maximum total death count per continent?
-3. What is the percentage of population infected per country?
+3. What is the highest percentage of population infected per country?
 4. What is the monthly infection rate per country?
 
 
@@ -123,7 +123,7 @@ order by 1,2
 
 ***2. Maximum total death count per continent***
 
-This query retrieves the maximum total death count for each continent from the table "CovidDeaths", excludes null values, groups the data by continent, and lists the results in descending order.
+This query retrieves the ```maximum total death``` count for each ```continent``` from the table "CovidDeaths", excludes null values, groups the data by continent, and lists the results in descending order.
 
 ```
 Select continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
@@ -133,7 +133,7 @@ Group by continent
 order by TotalDeathCount desc
 
 ```
-The provided data offers a breakdown of total death counts attributed to COVID-19 across continents.
+The provided data offers a breakdown of ```total death counts``` attributed to COVID-19 across continents.
 
 ![Screenshot (200)](https://github.com/TabithaChelagat/COVID-19_SQL_Portfolio_Project/assets/112205355/c56f5c00-3f53-43e5-80d7-cab5bd80bdcc)
 
@@ -141,6 +141,7 @@ The provided data offers a breakdown of total death counts attributed to COVID-1
 ![Screenshot (204)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/29a088af-f327-454d-9380-edebf5181823)
 
 
+*Summary of findings*
 
 **Europe**: The continent has reported the highest total death count of 1,016,750, indicating a significant impact of the pandemic on the region's population.
 
@@ -159,7 +160,7 @@ systems.
 
 ***3. Highest percentage of infection rate per country***
 
-This SQL query retrieves the top 8 locations (the whole data was too large to be included in this analysis) with their corresponding populations, maximum total cases recorded, and the percentage of the population infected.
+This SQL query retrieves the top 8 ```locations``` (the whole data was too large to be included in this analysis) with their corresponding populations, ```maximum total cases`` recorded, and the ```percentage of the population infected```.
 
 It groups the data by location and population, calculates the maximum total cases for each group, and then calculates the percentage of the population infected based on the maximum total cases and population. 
 
@@ -199,30 +200,44 @@ order by PercentPopulationInfected desc
 - This summary underscores the diverse impact of COVID-19 on different countries, influenced by factors such as population density, healthcare infrastructure, and public health measures implemented.
 
 
-***4. Monthly infection rate per country***-*Focusing on the United States, United Kingdom, China, India and Mexico*
+***4. Monthly infection rate per country*** - *Focusing on the United States, United Kingdom, China, India and Mexico*
 
+This SQL query retrieves data from the CovidDeaths table, selecting the ``Location, date, Population, and total_cases```, and calculates the ```PercentPopulationInfected``` by dividing total_cases by Population and multiplying by 100. 
+
+The Order by 1,2 sorts the result set by the first and second columns, which are Location and date respectively. 
+
+Additionally, Tableau was utilized to extract the month from the date column for analysis and visualization purposes.
+
+```
+Select Location, date, Population, total_cases,  (total_cases/population)*100 as PercentPopulationInfected
+From CovidDeaths$
+Order by 1,2
+
+```
 
 ![Screenshot (203)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/a4bb7761-c0a0-4e5c-b251-9c450978127f)
 
+*Summary of findings*
 
+In this analysis, I focused on the United Kingdom, the United States, Mexico, India, and China.
 
-**United Kingdom (UK)**:
+- *United Kingdom (UK)*
 
 The UK has experienced a fluctuating infection rate over the months, with a peak in January 2021, followed by a gradual decline. However, infections have remained relatively high compared to earlier months.
 
-**United States (US)**:
+- *United States (US)*
 
 The US has consistently reported high infection rates throughout the pandemic, with notable spikes in December 2020 and January 2021. While there have been fluctuations, infections have remained at a significant level over time.
 
-**Mexico**:
+- *Mexico*
 
 Mexico's infection rate has also fluctuated, with peaks observed in January and July 2021. Despite fluctuations, infections have remained relatively high, indicating ongoing challenges in controlling the spread of the virus.
 
-**India**:
+- *India*
 
 India experienced a devastating surge in infections around April and May 2021, reaching unprecedented levels. Subsequent months have shown a decline in infection rates, although they remain relatively high compared to earlier periods.
 
-**China**:
+- *China*
 
 China's infection rate has remained relatively low compared to other countries, with occasional small spikes observed. Stringent containment measures implemented by the Chinese government have likely contributed to the comparatively lower infection rates.
 
@@ -233,16 +248,20 @@ China's infection rate has remained relatively low compared to other countries, 
 ![Screenshot (205)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/a7aa742d-6100-4798-970f-871ce6347c1a)
 
 
-- **Global Numbers**: 
+- ***Global Numbers***
+  
 As of March 2021, there was a total of 150,574,977 confirmed cases of COVID-19 reported worldwide, and 3,180,206 deaths. This means that 2.11% of the world's population had been infected with the virus.
 
-- **Percent Of Population Infected Per Country**: 
+- ***Percent Of Population Infected Per Country***
+  
 The map on the right-hand side of the dashboard shows the percentage of people infected with COVID-19 in each country. The countries are color-coded according to the percentage of their population that has been infected, with darker colors indicating a higher percentage of infection.
 
-- **Total Death Count Per Continent**: 
+- ***Total Death Count Per Continent***
+
 The bar chart on the left-hand side of the dashboard shows the total number of deaths from COVID-19 in each continent. The continents are listed from lowest to highest death toll.
 
-- **Percent Population Infected Per Month**:
+- ***Percent Population Infected Per Month***
+  
 The line graph at the bottom of the dashboard shows the percentage of the population infected with COVID-19 over time. The graph shows data for five countries: the United States, the United Kingdom, Mexico, China, and India, and their infection estimates for the next 6 months.
 
 
@@ -253,9 +272,9 @@ It is important to note that the data on this dashboard is based on reported cas
 **CONCLUSION**
 
 
-In conclusion, the provided data offers valuable insights into the global impact of the COVID-19 pandemic, highlighting significant variations in infection rates and mortality across countries and continents. 
+- The provided data offers valuable insights into the global impact of the COVID-19 pandemic, highlighting significant variations in infection rates and mortality across countries and continents. 
 
-Analysis of the data reveals that certain regions, such as Europe and North America, have borne the brunt of the pandemic, reporting high infection and death counts. Conversely, countries like China have managed to maintain relatively lower infection rates through stringent containment measures.
+- Analysis of the data reveals that certain regions, such as Europe and North America, have borne the brunt of the pandemic, reporting high infection and death counts. Conversely, countries like China have managed to maintain relatively lower infection rates through stringent containment measures.
 
-Despite varying levels of success in controlling the virus, the data underscores the need for continued vigilance, international cooperation, and robust public health measures to mitigate the spread of COVID-19 and minimize its adverse effects on global health and economies.
+- Despite varying levels of success in controlling the virus, the data underscores the need for continued vigilance, international cooperation, and robust public health measures to mitigate the spread of COVID-19 and minimize its adverse effects on global health and economies.
 
