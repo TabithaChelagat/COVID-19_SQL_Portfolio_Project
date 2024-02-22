@@ -30,7 +30,7 @@ Before cleaning the data, I am familiarizing myself with the data to find any in
 
 - *Columns*
 
-The data set has 27 columns but this analysis is only going to focus on nine columns,
+The data set has ``27 columns`` but this analysis is only going to focus on nine columns,
 
 | Column Name   | Description                          |
 |---------------|--------------------------------------|
@@ -58,7 +58,7 @@ From PortfolioProject..CovidDeaths
 |------------|
 | 85171      |
 
-The table CovidDeaths has ```85,171`` data entries from March 2020 to March 2021
+The table CovidDeaths has ``85,171`` data entries from March 2020 to March 2021
 
 - *Checking for nulls*
 
@@ -114,9 +114,9 @@ order by 1,2
 
 *Summary of findings*
 
-- The provided data summarizes the global impact of COVID-19, indicating a total of 150,574,977 reported cases and 3,180,206 recorded deaths.
+- The provided data summarizes the global impact of COVID-19, indicating a total of ``150,574,977`` reported cases and ``3,180,206`` recorded deaths.
 
-- The calculated death percentage is approximately 2.11%, derived from the ratio of total deaths to total cases, demonstrating the severity of the pandemic's health outcomes.
+- The calculated death percentage is approximately ``2.11%``, derived from the ratio of total deaths to total cases, demonstrating the severity of the pandemic's health outcomes.
 
 - This data underscores the significance of continued efforts to mitigate the spread of the virus and improve healthcare measures worldwide.
 
@@ -143,24 +143,24 @@ The provided data offers a breakdown of ```total death counts``` attributed to C
 
 *Summary of findings*
 
-**Europe**: The continent has reported the highest total death count of 1,016,750, indicating a significant impact of the pandemic on the region's population.
+**Europe**: The continent has reported the highest total death count of ``1,016,750``, indicating a significant impact of the pandemic on the region's population.
 
-**North America**: Following closely, North America has reported 847,942 total deaths, highlighting the substantial toll of the virus on countries within the continent.
+**North America**: Following closely, North America has reported ``847,942`` total deaths, highlighting the substantial toll of the virus on countries within the continent.
 
-**South America**: South America has recorded 672,415 total deaths, underscoring the widespread impact of COVID-19 across the continent.
+**South America**: South America has recorded ``672,415`` total deaths, underscoring the widespread impact of COVID-19 across the continent.
 
-**Asia**: With 520,269 total deaths, Asia has also experienced significant mortality rates due to the pandemic, although varying considerably across different countries within the region.
+**Asia**: With ``520,269`` total deaths, Asia has also experienced significant mortality rates due to the pandemic, although varying considerably across different countries within the region.
 
-**Africa**: The continent has reported 121,784 total deaths, indicating comparatively lower mortality rates but still facing challenges in managing the pandemic's impact on healthcare 
+**Africa**: The continent has reported ``121,784`` total deaths, indicating comparatively lower mortality rates but still facing challenges in managing the pandemic's impact on healthcare 
 systems.
 
-**Oceania**: Oceania has reported the lowest total death count of 1,046, reflecting relatively successful containment measures implemented by countries within the region.
+**Oceania**: Oceania has reported the lowest total death count of ``1,046``, reflecting relatively successful containment measures implemented by countries within the region.
 
 
 
 ***3. Highest percentage of infection rate per country***
 
-This SQL query retrieves the top 8 ```locations``` (the whole data was too large to be included in this analysis) with their corresponding populations, ```maximum total cases`` recorded, and the ```percentage of the population infected```.
+This SQL query retrieves the top 8 ```locations``` (the whole data was too large to be included in this analysis) with their corresponding populations, ```maximum total cases``` recorded, and the ```percentage of the population infected```.
 
 It groups the data by location and population, calculates the maximum total cases for each group, and then calculates the percentage of the population infected based on the maximum total cases and population. 
 
@@ -250,7 +250,7 @@ China's infection rate has remained relatively low compared to other countries, 
 
 - ***Global Numbers***
   
-As of March 2021, there was a total of 150,574,977 confirmed cases of COVID-19 reported worldwide, and 3,180,206 deaths. This means that 2.11% of the world's population had been infected with the virus.
+As of March 2021, there was a total of ``150,574,977`` confirmed cases of COVID-19 reported worldwide, and ``3,180,206`` deaths. This means that ``2.11%`` of the world's population had been infected with the virus.
 
 - ***Percent Of Population Infected Per Country***
   
