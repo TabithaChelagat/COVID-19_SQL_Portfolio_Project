@@ -157,7 +157,7 @@ systems.
 
 
 
-***3. Percentage of infection per country***
+***3. Highest percentage of infection rate per country***
 
 This SQL query retrieves the top 8 locations (the whole data was too large to be included in this analysis) with their corresponding populations, maximum total cases recorded, and the percentage of the population infected.
 
@@ -187,21 +187,19 @@ order by PercentPopulationInfected desc
 ![Screenshot (202)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/b4db941d-5123-451b-ac86-1392d08055e4)
 
 
-The provided data offers insights into the COVID-19 impact on various countries, including their highest infection counts, percent population infected, and total population.
-
-
-*Key observations*:
+*Summary of findings*
 
 
 - Countries like Andorra, Montenegro, and Czechia have experienced relatively high infection rates, with percentages of the population infected surpassing 15%.
-Larger nations such as the United States, Brazil, and India, while having high absolute infection counts, exhibit lower percentages of the population infected, likely due to their large population sizes.
+  
+- Larger nations such as the United States, Brazil, and India, while having high absolute infection counts, exhibit lower percentages of the population infected, likely due to their large population sizes.
 
 - Larger populations, such as India, Indonesia, and Pakistan, have substantial absolute numbers of cases despite lower infection rates per capita.
 
-This summary underscores the diverse impact of COVID-19 on different countries, influenced by factors such as population density, healthcare infrastructure, and public health measures implemented.
+- This summary underscores the diverse impact of COVID-19 on different countries, influenced by factors such as population density, healthcare infrastructure, and public health measures implemented.
 
 
-Lastly, I analyzed the *monthly infection rate per country* focusing on the United States, United Kingdom, China, India and Mexico.
+***4. Monthly infection rate per country***-*Focusing on the United States, United Kingdom, China, India and Mexico*
 
 
 ![Screenshot (203)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/a4bb7761-c0a0-4e5c-b251-9c450978127f)
