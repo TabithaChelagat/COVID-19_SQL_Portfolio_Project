@@ -96,7 +96,7 @@ The analysis question is,
 
 ***1. What is the global death percentage?***
 
-the code aggregates data from the CovidDeaths table, calculates the ```total number of cases and deaths```, computes the ```death percentage```, and filters the results to exclude records with null continent values, finally presenting the result set ordered by total cases and total deaths.
+The code aggregates data from the CovidDeaths table, calculates the ```total number of cases and deaths```, computes the ```death percentage```, and filters the results to exclude records with null continent values, finally presenting the result set ordered by total cases and total deaths.
 
 ```
 Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
@@ -105,13 +105,12 @@ where continent is not null
 order by 1,2
 ```
 
-| total_cases | total_deaths | DeathPercentage |
+
+| Total_cases | Total_deaths | DeathPercentage |
 |-------------|--------------|-----------------|
 | 150,574,977 | 3,180,206    | 2.11%           |
 
 
-
-![Screenshot (199)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/e65f5bbe-6359-411c-b20a-7a083d1eb608)
 
 *Summary of findings*
 
@@ -124,8 +123,26 @@ order by 1,2
 
 ***Total death count per continent***
 
+This query retrieves the maximum total death count for each continent from the table "CovidDeaths", excludes null values, groups the data by continent, and lists the results
+in a descending order.
 
-![Screenshot (201)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/bf4359ef-6912-4ecd-81c4-eea4d8b7d92a)
+```
+Select continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
+From CovidDeaths$
+Where continent is not null 
+Group by continent
+order by TotalDeathCount desc
+
+```
+
+| Continent      | TotalDeathCount |
+|----------------|-----------------|
+| North America  | 576232          |
+| South America  | 403781          |
+| Asia           | 211853          |
+| Europe         | 127775          |
+| Africa         | 54350           |
+| Oceania        | 910             |
 
 
 The provided data offers a breakdown of total death counts attributed to COVID-19 across continents:
