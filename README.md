@@ -124,7 +124,7 @@ order by 1,2
 ***Total death count per continent***
 
 This query retrieves the maximum total death count for each continent from the table "CovidDeaths", excludes null values, groups the data by continent, and lists the results
-in a descending order.
+in descending order.
 
 ```
 Select continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
