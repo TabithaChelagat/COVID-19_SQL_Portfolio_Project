@@ -26,41 +26,103 @@ I will conduct an analysis using COVID-19 data extracted from March 2020 to Sept
 
 Before cleaning the data, I am familiarizing myself with the data to find any inconsistencies
 
-*Observations*:
+***Observations***
+
+- *Columns*
+
+The data set has 27 columns but this analysis is only going to focus on nine columns,
+
+| Column Name   | Description                          |
+|---------------|--------------------------------------|
+| country_name  | Name of the country                  |
+| continent     | Continent where the country is located|
+| location      | Location within the country          |
+| date          | Date of the recorded data            |
+| total_cases   | Total number of confirmed cases      |
+| new_cases     | Number of new confirmed cases        |
+| total_deaths  | Total number of confirmed deaths     |
+| new_deaths    | Number of new confirmed deaths       |
+| population    | Total population of the country      |
 
 
-The data set has 27 columns but this analysis is only going to focus on nine columns, country_name', 'continent', 'location', 'date', 'total_cases', 'new_cases', 'total_deaths', 'new_deaths', and 'population'.
+- *Total data*
 
-The table CovidDeaths has 85,171 from March 2020 to March 2021
+With the iso_code as the primary key, this code counts the total number of rows in the dataset. 
 
+```
+Select COUNT(iso_code) as Total_data
+From PortfolioProject..CovidDeaths
+```
 
 | Total_data |
 |------------|
 | 85171      |
 
-The provided table displays data with null values across various columns, including 'country_name', 'continent', 'location', 'date', 'total_cases', 'new_cases', 'total_deaths', 'new_deaths', and 'population'. These zeros indicate missing or unavailable information for the corresponding records.
+The table CovidDeaths has ```85,171`` data entries from March 2020 to March 2021
 
+- *Checking for nulls*
+
+In this code, ```COUNT(*)``` returns the total number of rows in the table while ```COUNT(column_name)``` returns the number of non-NULL values in each respective column.
+Subtracting COUNT(*) from COUNT(column_name) effectively counts the number of NULL values in each column.
+
+```
+Select COUNT(*)-COUNT(continent) as continent,
+COUNT(*)-COUNT(iso_code) as country_abrv,
+COUNT(*)-COUNT(location) as location,
+COUNT(*)-COUNT(date) as date,
+COUNT(*)-COUNT(total_cases) as total_cases,
+COUNT(*)-COUNT(new_cases) as new_cases,
+COUNT(*)-COUNT(total_deaths) as total_deaths,
+COUNT(*)-COUNT(new_deaths) as new_deaths,
+COUNT(*)-COUNT(population) as population
+From PortfolioProject..CovidDeaths
+```
+
+The provided table displays data with null values across various columns, including 'country_name', 'continent', 'location', 'date', 'total_cases', 'new_cases', 'total_deaths', 'new_deaths', and 'population'. These zeros indicate missing or unavailable information for the corresponding records.
 
 ![Screenshot (198)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/0e4a3f25-1bb9-4175-8457-bf0a5d9fafaa)
 
+
+These null values will be excluded when doing our analysis.
 
 
 **DATA ANALYSIS**
 
 
-I queried the data for analysis using SQL and visualized the findings using Tableau.
+I queried the data for analysis using ``SQL`` and visualized the findings using ```Tableau```.
+
 The analysis question is,
 
 
-*What is the global death percentage?*
+***1. What is the global death percentage?***
+
+the code aggregates data from the CovidDeaths table, calculates the ```total number of cases and deaths```, computes the ```death percentage```, and filters the results to exclude records with null continent values, finally presenting the result set ordered by total cases and total deaths.
+
+```
+Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
+From CovidDeaths$
+where continent is not null 
+order by 1,2
+```
+
+| total_cases | total_deaths | DeathPercentage |
+|-------------|--------------|-----------------|
+| 150,574,977 | 3,180,206    | 2.11%           |
+
 
 
 ![Screenshot (199)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/e65f5bbe-6359-411c-b20a-7a083d1eb608)
 
-The provided data summarizes the global impact of COVID-19, indicating a total of 150,574,977 reported cases and 3,180,206 recorded deaths. The calculated death percentage is approximately 2.11%, derived from the ratio of total deaths to total cases, demonstrating the severity of the pandemic's health outcomes. This data underscores the significance of continued efforts to mitigate the spread of the virus and improve healthcare measures worldwide.
+*Summary of findings*
+
+- The provided data summarizes the global impact of COVID-19, indicating a total of 150,574,977 reported cases and 3,180,206 recorded deaths.
+
+- The calculated death percentage is approximately 2.11%, derived from the ratio of total deaths to total cases, demonstrating the severity of the pandemic's health outcomes.
+
+- This data underscores the significance of continued efforts to mitigate the spread of the virus and improve healthcare measures worldwide.
 
 
-Next, the *total death count per continent* was examined.
+***Total death count per continent***
 
 
 ![Screenshot (201)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/bf4359ef-6912-4ecd-81c4-eea4d8b7d92a)
