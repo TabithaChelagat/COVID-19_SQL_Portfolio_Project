@@ -8,7 +8,7 @@ This project focuses on analyzing COVID-19 data spanning from March 2020 to Sept
 **QUESTIONS TO ANSWER**
 
 1. What is the global death percentage?
-2. What is the total death count per continent?
+2. What is the maximum total death count per continent?
 3. What is the percentage of population infected per country?
 4. What is the monthly infection rate per country?
 
@@ -121,10 +121,9 @@ order by 1,2
 - This data underscores the significance of continued efforts to mitigate the spread of the virus and improve healthcare measures worldwide.
 
 
-***Total death count per continent***
+***2. Maximum total death count per continent***
 
-This query retrieves the maximum total death count for each continent from the table "CovidDeaths", excludes null values, groups the data by continent, and lists the results
-in descending order.
+This query retrieves the maximum total death count for each continent from the table "CovidDeaths", excludes null values, groups the data by continent, and lists the results in descending order.
 
 ```
 Select continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
@@ -134,18 +133,9 @@ Group by continent
 order by TotalDeathCount desc
 
 ```
+The provided data offers a breakdown of total death counts attributed to COVID-19 across continents.
 
-| Continent      | TotalDeathCount |
-|----------------|-----------------|
-| North America  | 576232          |
-| South America  | 403781          |
-| Asia           | 211853          |
-| Europe         | 127775          |
-| Africa         | 54350           |
-| Oceania        | 910             |
-
-
-The provided data offers a breakdown of total death counts attributed to COVID-19 across continents:
+![Screenshot (200)](https://github.com/TabithaChelagat/COVID-19_SQL_Portfolio_Project/assets/112205355/c56f5c00-3f53-43e5-80d7-cab5bd80bdcc)
 
 
 ![Screenshot (204)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/29a088af-f327-454d-9380-edebf5181823)
@@ -167,8 +157,31 @@ systems.
 
 
 
-Thirdly, the *percentage of infection per country* was analyzed.
+***3. Percentage of infection per country***
 
+This SQL query retrieves the top 8 locations (the whole data was too large to be included in this analysis) with their corresponding populations, maximum total cases recorded, and the percentage of the population infected.
+
+It groups the data by location and population, calculates the maximum total cases for each group, and then calculates the percentage of the population infected based on the maximum total cases and population. 
+
+Finally, it orders the result set by the percentage of the population infected in descending order to display the locations with the highest percentage of the population infected at the top.
+
+```
+Select top 8 Location, Population, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
+From CovidDeaths$
+Group by Location, Population
+order by PercentPopulationInfected desc
+```
+
+| Location   | Population | HighestInfectionCount | PercentPopulationInfected |
+|------------|------------|-----------------------|---------------------------|
+| Andorra    | 77,265     | 13,232                | 17.13%                    |
+| Montenegro | 628,062    | 97,389                | 15.51%                    |
+| Czechia    | 10,708,982 | 1,630,758             | 15.23%                    |
+| San Marino | 33,938     | 5,066                 | 14.93%                    |
+| Slovenia   | 2,078,932  | 240,292               | 11.56%                    |
+| Luxembourg | 625,976    | 67,205                | 10.74%                    |
+| Bahrain    | 1,701,583  | 176,934               | 10.40%                    |
+| Serbia     | 6,804,596  | 689,557               | 10.13%                    |
 
 
 ![Screenshot (202)](https://github.com/tabby1307/COVID-19_Portfolio_Project/assets/112205355/b4db941d-5123-451b-ac86-1392d08055e4)
